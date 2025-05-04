@@ -1,0 +1,20 @@
+name: Python application # name of workflow
+
+on: # condition to trigger the pipeline or workflow
+  push: # condition here is if code is push tomain branch
+    #branches: [ main ] # then only workflow will trigger else not
+    branches:
+      - main
+jobs: # group of task that the system runs to complete a goal
+  build: # 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3 # convention
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    # - name: Install dependencies
+    #   run: pip install -r requirements.txt || true
+    - name: Run script
+      run: python process.py
