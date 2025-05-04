@@ -16,6 +16,8 @@ jobs: # group of task that the system runs to complete a goal
         python-version: '3.x'
     # - name: Install dependencies
     #   run: pip install -r requirements.txt || true
-    - name: Run script
+    - name: Run process script
       run: python process.py
-      run:  'Hello- world'
+
+    - name: Print hello world
+    run: echo 'hello- world'
